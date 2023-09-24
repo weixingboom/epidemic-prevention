@@ -32,7 +32,7 @@ module.exports = class Model {
           connection.release()
         } else {
           try {
-            //query执行sql语句
+            //query执行sql语句，成功返回promise结果
             // throw new err('error')
             connection.query(sql, params, (err, results) => {
               if (err) {
@@ -57,6 +57,7 @@ module.exports = class Model {
   // 查询单个用户数据
   static queryOne(sql) {
     return new Promise((resolve, reject) => {
+      // 调用query函数查询结果，返回第一个结果
       this.query(sql).then(results => {
         if (results && results.length > 0) {
           resolve(results[0])

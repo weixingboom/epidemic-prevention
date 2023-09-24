@@ -1,3 +1,4 @@
+//路由权限权限控制
 import router from './router'
 import store from './store'
 import { Message } from 'element-ui'
@@ -26,7 +27,7 @@ router.beforeEach(async(to, from, next) => {
     if (to.path === '/login') {
       // if is logged in, redirect to the home page 在地址栏中输入login 直接重定向到首页，也就是不会跳出去
       next({ path: '/' })
-      NProgress.done() // hack: https://github.com/PanJiaChen/vue-element-admin/pull/2939
+      NProgress.done()
     } else {
       // determine whether the user has obtained his permission roles through getInfo
       // 判断用户的角色是否存在 从vuex中获取用户角色是在下面程序中获取

@@ -65,7 +65,7 @@ module.exports = class users_dao extends require('../model/user_mod') {
    * @param res
    */
 
-  // 根据token 获取用户信息
+  // 根据token 获取用户信息 解码添加roles
   static async getUserDataByToken(req, res, next) {
     try {
       const decoded = jwtUtil.decoded(req)
