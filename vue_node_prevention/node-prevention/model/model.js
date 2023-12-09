@@ -6,7 +6,7 @@ const mysql = require('mysql')
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'wyl123456',
+  password: '123456',
   port: '3306',
   database: 'vue_store'
 
